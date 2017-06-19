@@ -1,0 +1,18 @@
+<assembly>
+    <id>bin</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+	<fileSets>
+		<fileSet>
+			<directory>target/${project.build.finalName}</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+			<outputDirectory>/project/hidroplan/webapps/${app.name}</outputDirectory>
+		</fileSet>
+	</fileSets>
+
+</assembly>

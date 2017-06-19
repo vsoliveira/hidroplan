@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://hidroplan.com/webservice/model/createsolucaonutritiva"
+	xmlns:tns="http://hidroplan.com/webservice/model/createsolucaonutritiva"
+	elementFormDefault="qualified"
+	xmlns:Q1="http://hidroplan.com/webservice/model/listsolucaonutritiva">
+
+	<import schemaLocation="listSolucaoNutritiva.xsd"
+		namespace="http://hidroplan.com/webservice/model/listsolucaonutritiva"></import>
+
+	<element name="createSolucaNutritivaRequest" type="tns:CreateSolucaoNutritivaRequest" />
+
+	<complexType name="CreateSolucaoNutritivaRequest">
+		<sequence>
+			<element name="idTaxon" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="tipoTaxonPerfil" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="listSolucaoNutritiva" type="Q1:ListSolucaoNutritiva"
+				maxOccurs="1" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="createSolucaNutritivaResponse" type="tns:CreateSolucaoNutritivaResponse" />
+
+	<complexType name="CreateSolucaoNutritivaResponse">
+		<sequence>
+    		<element name="status" type="string" maxOccurs="1" minOccurs="0"/>
+    		<element name="detalhes" type="string" maxOccurs="unbounded" minOccurs="0"/>
+		</sequence>
+	</complexType>
+
+</schema>

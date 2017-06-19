@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://hidroplan.com/webservice/model/gettaxon"
+	xmlns:tns="http://hidroplan.com/webservice/model/gettaxon"
+	elementFormDefault="qualified"
+	xmlns:Q1="http://hidroplan.com/webservice/model/listperfiltaxon"
+	xmlns:Q2="http://hidroplan.com/webservice/model/listvernacularname">
+
+	<import schemaLocation="listPerfilTaxon.xsd"
+		namespace="http://hidroplan.com/webservice/model/listperfiltaxon"></import>
+	<import schemaLocation="listVernacularName.xsd"
+		namespace="http://hidroplan.com/webservice/model/listvernacularname"></import>
+
+	<element name="getTaxonRequest" type="tns:GetTaxonRequest" />
+
+	<complexType name="GetTaxonRequest">
+		<sequence>
+			<element name="idTaxon" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="taxonName" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="taxonVernacularName" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="taxonPerfil" type="string" maxOccurs="1" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="getTaxonResponse" type="tns:GetTaxonResponse" />
+
+	<complexType name="GetTaxonResponse">
+		<sequence>
+			<element name="idTaxon" type="decimal" maxOccurs="1"
+				minOccurs="0" />
+			<element name="scientificName" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="acceptedNameUsage" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="parentNameUsage" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="phylum" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="classTaxon" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="orderTaxon" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="family" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="genus" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="specificEpithet" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="infraspecificEpithet" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="taxonRank" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="scientificNameAuthorship" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="taxonomicStatus" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="nomenclaturalStatus" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="modified" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="bibliographicCitation" type="string" maxOccurs="1" minOccurs="0" />
+			<element name="referencesTaxon" type="string" maxOccurs="1" minOccurs="0" />
+
+			<element name="listPerfilTaxon" type="Q1:ListPerfilTaxon"
+				maxOccurs="1" minOccurs="0" />
+			<element name="listVernacularName" type="Q2:ListVernacularName"
+				maxOccurs="1" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+</schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://hidroplan.com/webservice/model/listsolucaonutritiva"
+	xmlns:tns="http://hidroplan.com/webservice/model/listsolucaonutritiva"
+	elementFormDefault="qualified">
+
+	<complexType name="ListSolucaoNutritiva">
+		<sequence>
+			<element name="itensLista" type="tns:ItemElemento" minOccurs="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ItemElemento">
+		<sequence>
+			<element name="idElemento" type="decimal" maxOccurs="1"
+				minOccurs="0" />
+			<element name="nameElemento" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="molPerL" type="string" maxOccurs="1"
+				minOccurs="1" />
+			<element name="symbolElemento" type="string" maxOccurs="1"
+				minOccurs="1" />
+			<element name="atomicNumberElemento" type="decimal"
+				maxOccurs="1" minOccurs="0" />
+			<element name="atomicWeightElemento" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="densityElemento" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="eletronicConfigurationtElemento" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="statusArduino" type="string" maxOccurs="1"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+
+</schema>

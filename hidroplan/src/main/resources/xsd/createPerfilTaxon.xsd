@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://hidroplan.com/webservice/model/createperfiltaxon"
+	xmlns:tns="http://hidroplan.com/webservice/model/createperfiltaxon"
+	elementFormDefault="qualified">
+
+	<element name="createPerfilTaxonRequest" type="tns:CreatePerfilTaxonRequest" />
+
+	<complexType name="CreatePerfilTaxonRequest">
+		<sequence>
+			<element name="idTaxon" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="tipo" type="string" maxOccurs="1"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="createPerfilTaxonResponse" type="tns:CreatePerfilTaxonResponse" />
+
+	<complexType name="CreatePerfilTaxonResponse">
+		<sequence>
+    		<element name="status" type="string" maxOccurs="1" minOccurs="0"/>
+    		<element name="detalhes" type="string" maxOccurs="unbounded" minOccurs="0"/>
+		</sequence>
+	</complexType>
+
+</schema>

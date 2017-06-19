@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://hidroplan.com/webservice/model/listcondicoesambientais"
+	xmlns:tns="http://hidroplan.com/webservice/model/listcondicoesambientais"
+	elementFormDefault="qualified">
+
+	<complexType name="ListCondicoesAmbientais">
+		<sequence>
+			<element name="itensLista" type="tns:ItemCondicaoAmbiental"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ItemCondicaoAmbiental">
+		<sequence>
+			<element name="fatorAmbiental" type="string" maxOccurs="1"
+				minOccurs="1" />
+			<element name="grandeza" type="decimal" maxOccurs="1"
+				minOccurs="1" />
+			<element name="unidadeDeMedida" type="string" maxOccurs="1"
+				minOccurs="1" />
+			<element name="statusArduino" type="string" maxOccurs="1"
+				minOccurs="0" />
+
+		</sequence>
+	</complexType>
+
+</schema>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://hidroplan.com/webservice/model/getperfiltaxon"
+	xmlns:tns="http://hidroplan.com/webservice/model/getperfiltaxon"
+	elementFormDefault="qualified"
+	xmlns:Q1="http://hidroplan.com/webservice/model/listcondicoesambientais"
+	xmlns:Q2="http://hidroplan.com/webservice/model/listsolucaonutritiva">
+
+	<import schemaLocation="listCondicoesAmbientais.xsd"
+		namespace="http://hidroplan.com/webservice/model/listcondicoesambientais"></import>
+	<import schemaLocation="listSolucaoNutritiva.xsd"
+		namespace="http://hidroplan.com/webservice/model/listsolucaonutritiva"></import>
+
+	<element name="getPerfilTaxonRequest" type="tns:GetPerfilTaxonRequest" />
+
+	<complexType name="GetPerfilTaxonRequest">
+		<sequence>
+			<element name="idTaxon" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="tipo" type="string" maxOccurs="1" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="getPerfilTaxonResponse" type="tns:GetPerfilTaxonResponse" />
+
+	<complexType name="GetPerfilTaxonResponse">
+		<sequence>
+			<element name="idTaxonPerfil" type="decimal" maxOccurs="1"
+				minOccurs="0" />
+			<element name="tipoTaxonPerfil" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="idTaxon" type="decimal" maxOccurs="1"
+				minOccurs="0" />
+			<element name="scientificName" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="acceptedNameUsage" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="parentNameUsage" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="listCondicoesAmbientais" type="Q1:ListCondicoesAmbientais"
+				maxOccurs="1" minOccurs="0" />
+			<element name="listSolucaoNutritiva" type="Q2:ListSolucaoNutritiva"
+				maxOccurs="1" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+</schema>

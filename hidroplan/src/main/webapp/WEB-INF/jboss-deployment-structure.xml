@@ -1,0 +1,21 @@
+<jboss-deployment-structure>
+	<deployment>
+		<exclude-subsystems>
+			<subsystem name="jpa" />
+		</exclude-subsystems>
+		<exclusions>
+			<!-- WFCORE-209 workaround -->
+			<module name="javaee.api" />
+			<module name="javax.persistence.api" />
+			<module name="org.hibernate" />
+			<!-- log -->
+			<module name="org.slf4j" />
+			<module name="org.slf4j.impl" />
+			<module name="org.apache.commons.logging" />
+			<module name="org.jboss.logging" />
+			<!-- webservices -->
+			<module name="org.jboss.ws.saaj-impl" />
+			<module name="com.sun.xml.messaging.saaj" />
+		</exclusions>
+	</deployment>
+</jboss-deployment-structure>

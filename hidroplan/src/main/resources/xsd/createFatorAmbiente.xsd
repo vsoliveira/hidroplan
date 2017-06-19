@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://hidroplan.com/webservice/model/createfatorambiente"
+	xmlns:tns="http://hidroplan.com/webservice/model/createfatorambiente"
+	elementFormDefault="qualified">
+
+	<element name="createFatorAmbienteRequest" type="tns:CreateFatorAmbienteRequest" />
+
+	<complexType name="CreateFatorAmbienteRequest">
+		<sequence>
+			<element name="idTaxon" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="tipoTaxonPerfil" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="valorFatorAmbiente" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="unidadeDoValorFatorAmbiente" type="string" maxOccurs="1"
+				minOccurs="0" />
+			<element name="tipoFatorAmbiente" type="string" maxOccurs="1"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="createFatorAmbienteResponse" type="tns:CreateFatorAmbienteResponse" />
+
+	<complexType name="CreateFatorAmbienteResponse">
+		<sequence>
+    		<element name="status" type="string" maxOccurs="1" minOccurs="0"/>
+    		<element name="detalhes" type="string" maxOccurs="unbounded" minOccurs="0"/>
+		</sequence>
+	</complexType>
+</schema>
